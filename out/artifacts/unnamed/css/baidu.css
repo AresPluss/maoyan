@@ -1,0 +1,286 @@
+@import "public.css";
+.MainTitle{
+    width: 100%;
+    height: 75px;
+    /*background-color: #5a8bbb;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.MainTitle>.leftHalf{
+    height: 100%;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    /*background-color: #bdcefc;*/
+}
+.MainTitle>.leftHalf a{
+    font-size: 16px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: inherit;
+}
+.MainTitle>.leftHalf a:hover{
+    color: #00bdf5;
+    cursor: pointer;
+}
+.MainTitle>.leftHalf>.container{
+    height: 100%;
+    position: relative;
+    /*background-color: #00bdf5;*/
+}
+.MainTitle>.leftHalf>.container>.moreOptions{
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    top: 60px;
+    left: -260px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.MainTitle>.leftHalf>.container:hover>.moreOptions{
+    display: block;
+}
+.MainTitle>.leftHalf>.container>.moreOptions>div{
+    height: 28%;
+    width: 23.3%;
+    float: left;
+    /*background-color: #5a8bbb;*/
+    margin: 0 5%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.MainTitle>.leftHalf>.container>.moreOptions>div:hover{
+    background-color: rgba(128, 128, 128, 0.2);
+}
+.MainTitle>.leftHalf>.container>.moreOptions>div>div{
+    margin-top: 10px;
+}
+.MainTitle>.leftHalf>.container>.moreOptions>div>img{
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    width: 75%;
+}
+.MainTitle>.leftHalf>.container>.moreOptions>.showAll{
+    height: 10%;
+    width: 90%;
+    margin-top: -1%;
+    color: gray;
+    /*background-color: #645abb;*/
+}
+.MainTitle>.leftHalf>.container>.moreOptions>.firstRow{
+    margin-top: 5%;
+}
+.MainTitle>.rightHalf{
+    width: 10%;
+    height: 100%;
+    /*background-color: orange;*/
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+.MainTitle>.rightHalf>.AI{
+    width: 34%;
+    height: 100%;
+    /*background-color: #bdcefc;*/
+}
+.MainTitle>.rightHalf>.setting{
+    width: 33%;
+    height: 100%;
+    position: relative;
+    /*background-color: #384b7c;*/
+}
+.MainTitle>.rightHalf>.setting>.menu {
+    display: none;
+    width: 130%;
+    height: 160px;
+    position: absolute;
+    top: 80%;
+    /*background-color: #d2d23d;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 15px;
+}
+.MainTitle>.rightHalf>.setting:hover>.menu{
+    display: flex;
+}
+.MainTitle>.rightHalf>.setting>.menu>div{
+    width: 100%;
+    height: 100%;
+    /*background-color: #5a8bbb;*/
+}
+.MainTitle>.rightHalf>.setting>.menu>div>div{
+    height: 20%;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.MainTitle>.rightHalf>.setting>.menu>div>div:hover{
+    background-color: rgba(128, 128, 128, 0.3);
+}
+.MainTitle>.rightHalf>.login{
+    width: 33%;
+    height: 100%;
+    /*background-color: #bdcefc;*/
+}
+.MainTitle>.rightHalf>.login>.button{
+    width: 85%;
+    height: 50%;
+    background-color: #283659;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.MainContent{
+    width: 100%;
+    height: 900px;
+    /*background-color: #bdcefc;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.MainContent>.main{
+    width: 40%;
+    height: 50%;
+    /*background-color: blue;*/
+    margin-top: 50px;
+}
+.MainContent>.main>.log{
+    width: 100%;
+    height: 25%;
+    /*background-color: blueviolet;*/
+}
+.MainContent>.main>.log>img{
+    height: 100%;
+}
+.MainContent>.main>.input{
+    height: 15%;
+    width: 100%;
+    /*background-color: brown;*/
+}
+.MainContent>.main>.input>input{
+    height: 50%;
+    width: 65%;
+    border-radius: 10px 0 0 10px;
+}
+.MainContent>.main>.input>.button{
+    height: 60%;
+    width: 15%;
+    /*margin-left: 10px;*/
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgba(0, 0, 255, 0.5);
+    cursor: pointer;
+}
+.MainContent>.main>.input>.button:hover{
+    background-color: rgba(0, 0, 255, 0.7);
+}
+.MainContent>.main>.hotSearch{
+    height: 60%;
+    width: 100%;
+    /*background-color: chartreuse;*/
+}
+.MainContent>.main>.hotSearch>.content{
+    height: 80%;
+    width: 80%;
+    /*background-color: green;*/
+}
+.MainContent>.main>.hotSearch>.content>.top{
+    height: 25%;
+    width: 100%;
+    /*background-color: grey;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.MainContent>.main>.hotSearch>.content>.top>.title{
+    font-size: 17px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.MainContent>.main>.hotSearch>.content>.top>.title:hover{
+    color: #00bdf5;
+}
+.MainContent>.main>.hotSearch>.content>.top>.refresh{
+    font-size: 17px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.MainContent>.main>.hotSearch>.content>.top>.refresh:hover{
+    color: #00bdf5;
+}
+.MainContent>.main>.hotSearch>.content>.rank{
+    height: 75%;
+    width: 100%;
+    /*background-color: honeydew;*/
+}
+.MainContent>.main>.hotSearch>.content>.rank>div{
+    height: 33%;
+    width: 49%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 1%;
+}
+.MainContent>.main>.hotSearch>.content>.rank span{
+    font-size: 18px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.MainContent>.main>.hotSearch>.content>.rank span:hover{
+    color: blue;
+    text-decoration: underline;
+}
+.foot{
+    width: 100%;
+    height: 50px;
+    /*background-color: gray;*/
+}
+.foot>ul>span{
+    color: gray;
+    margin: 0 10px;
+    font-size: 8px;
+    cursor: pointer;
+}
+.foot>ul>span:hover{
+    color: black;
+}
+.foot>.detail{
+    width: 2%;
+    height: 80%;
+    position: relative;
+    border: 2px solid rgba(128, 128, 128, 0.4);
+    border-radius: 10px;
+    /*background-color: #00bdf5;*/
+}
+.foot>.detail>.moreInfo{
+    width: 460px;
+    height: 80px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: -80px;
+    left: -430px;
+    border-radius: 10px;
+    /*background-color: #283659;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding-left: 10px;
+    color: gray;
+    font-size: 8px;
+}
+.foot>.detail:hover>.moreInfo{
+    display: flex;
+}
+.foot>.detail>.moreInfo>div{
+    margin: 2px 0;
+}
+.foot>.detail>.button{
+    font-weight: bold;
+    font-size: 30px;
+}

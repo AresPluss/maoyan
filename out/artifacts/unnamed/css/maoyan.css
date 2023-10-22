@@ -1,0 +1,260 @@
+@import "public.css";
+
+
+.content{
+    /*background-color: aqua;*/
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+.content>.real_content{
+    /*background-color: #5a8bbb;*/
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.real_content>.movie{
+    /*background-color: #e0dddd;*/
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.movie>.movie_title{
+    height: 9%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /*background-color: blue;*/
+}
+.movie>.movie_info>.movie_ifo_align{
+    cursor: pointer;
+}
+.movie>.movie_picture{
+    height: 89%;
+    /*background-color: #1a2b59;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.movie_picture_half{
+    height: 48%;
+    /*background-color: aquamarine;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.each_movie{
+    /*background-color: #5a8bbb;*/
+    width: 21%;
+    position: relative;
+    cursor: pointer;
+}
+.each_movie>.ever_picture{
+    width: 100%;
+    height: 85%;
+    background-color: #5a8bbb;
+}
+.each_movie>.info{
+    /*background-color: #5a8bbb;*/
+    background-image: url("../img/black_to_white.png");
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    bottom: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.each_movie>.info>.name{
+    margin-left: 10px;
+    font-size: 20px;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 5%;
+}
+.each_movie>.info>.score{
+    margin-top: 5%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.each_movie>.info>.score>.big{
+    height: 100%;
+    /*background-color: blue;*/
+    font-style: italic;
+    font-size: 22px;
+    color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.each_movie>.info>.score>.small{
+    height: 100%;
+    /*background-color: black;*/
+    margin-right: 8px;
+    margin-top: 3px;
+    margin-left: 1px;
+    font-style: italic;
+    font-size: 18px;
+    color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.each_movie>.tow_IMAX{
+    position: absolute;
+    width: 45%;
+    left: -3px;
+    top: 5px;
+}
+.each_movie>img{
+    width: 80%;
+}
+.each_buy{
+    height: 20%;
+    width: 100%;
+    font-size: 18px;
+    color: rgb(248, 89, 89);
+    border: 1px solid rgb(0, 0, 0, 0.08);
+}
+.each_buy:hover{
+    background-color: red;
+    color: white;
+}
+
+.real_content>.info{
+    /*background-color: #ff7fc8;*/
+    width: 40%;
+    height: 100%;
+}
+.real_content>.info>.winner_title{
+    /*background-color: #1a2b59;*/
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.real_content>.info>.top{
+    /* background-color: #543145; */
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.real_content>.info>.top>.winner_log{
+    position: absolute;
+}
+.real_content>.info>.list{
+    /*background-color: #617180;*/
+    height: 40%;
+}
+.real_content>.info>.list>.ever_list{
+    /*background-color: #dc83b6;*/
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+}
+.ever_list>.number{
+    /*background-color: #af4f4f;*/
+    width: 7%;
+    height: 100%;
+    font-size: 30px;
+    font-style: italic;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ever_list>.info{
+    /*background-color: #9f3f76;*/
+    width: 93%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.ever_list>.info>.movie_name{
+    font-size: 20px;
+    cursor: pointer;
+}
+.ever_list>.info>.data{
+    font-size: 20px;
+    color: red;
+}
+.today_data{
+    /*background-color: #65819d;*/
+    height: 35%;
+}
+.today_data>.inner{
+    width: 100%;
+    height: 70%;
+    background-color: rgb(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    border: 1px solid rgb(0, 0, 0, 0.15);
+}
+.today_data>.inner>.inner_left{
+    background-color: red;
+    height: 100%;
+    width: 10%;
+    font-size: 28px;
+    color: white;
+}
+.today_data>.inner>.inner_right{
+    /* background-color: #1a2b59; */
+    width: 80%;
+    margin-left: 5%;
+}
+.today_data>.inner>.inner_right>.space{
+    height: 20%;
+    /*background-color: #b6c6f1;*/
+}
+.today_data>.inner>.inner_right>.half_up{
+    /*background-color: #793232;*/
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.today_data>.inner>.inner_right>.half_up>.left{
+    font-size: 50px;
+    color: red;
+    font-weight: bold;
+}
+.today_data>.inner>.inner_right>.half_up>.right{
+    font-size: 25px;
+    color: red;
+    cursor: pointer;
+}
+.today_data>.inner>.inner_right>.half_down{
+    /*background-color: #492323;*/
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.today_data>.inner>.inner_right>.half_down>div{
+    font-size: 24px;
+    color: gray;
+}

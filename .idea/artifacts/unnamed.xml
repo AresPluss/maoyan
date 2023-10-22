@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="unnamed">
+    <output-path>$PROJECT_DIR$/out/artifacts/unnamed</output-path>
+    <root id="archive" name="unnamed.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="maoyan" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.1.3" />
+          <element id="library" level="module" name="Maven: com.alibaba:jconsole:1.8.0" module-name="maoyan" />
+          <element id="library" level="module" name="Maven: com.alibaba:tools:1.8.0" module-name="maoyan" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.49" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.79" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="maoyan/web/Web" />
+    </root>
+  </artifact>
+</component>

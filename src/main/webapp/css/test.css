@@ -1,0 +1,86 @@
+.content{
+    display: flex;/*开启弹性布局*/
+    height: 1000px;
+    background-image: url("../img/reg_bg_min.jpg");
+    background-size: cover;
+}
+.left{
+    width: 40%;
+    height: 100%;
+    position: center;
+    /*background-color: #bdcefc;*/
+}
+.left>.baiduLog{
+    position: absolute;
+    left: 75px;
+    top: 75px;
+    height: 40px;
+}
+.ad{
+    position: absolute;
+    left: 200px;
+    top: 300px;
+    color: #ffffff;
+}
+
+
+.right{
+    width: 40%;
+    height: 100%;
+    margin-right: 130px;
+    /*background-color: #3bb858;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.register{
+    width: 70%;
+    height: 75%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.register>.register_content{
+    height: 15%;
+    width: 80%;
+    /*background-color: #a89d23;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.register>.register_input{
+    height: 60%;
+    width: 80%;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    /*background-color: white;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.register>.register_input>div{
+    font-size: large;
+}
+input{
+    height: 35px;
+    width: 320px;
+    border-radius: 5px;
+    outline-color: #5a8bbb;
+    margin-left: 20px;
+}
+.register>.register_button{
+    height: 6%;
+    width: 80%;
+    background-color: #bdcefc;
+    border-radius: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
