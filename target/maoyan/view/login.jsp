@@ -10,23 +10,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="<%=basePath%>js/jquery-3.7.1.min.js"></script>
 </head>
 <style>
 </style>
 <body>
-    <form id="userForm" onsubmit="return false" action="#">
+    <form id="loginForm" action="" onsubmit="return false">
         <input type="text" name="userName"><br>
         <input type="password" name="password"><br>
-        <input type="submit" onclick="doSub()">
+        <input type="submit" id="doLogin">
         <input type="reset">
     </form>
 <script>
-    function doSub(){
-        // 获取账号
-        // 获取密码
-        // 访问后端
-        window.location.href="http://localhost:8080/maoyan_war_exploded/user?method=login&userName=admin&password=123456";
-    }
+    $("#doLogin").click(function (){
+        $.ajax({
+            url: "<%=basePath%>user?method=login",
+            data: $("#loginForm").serialize(),
+            success:function (result){
+                var user = JSON.parse(result);
+                if(user == null){
+                    alert("登录失败");
+                }else{
+                    alert("Welcome!");
+                }
+            }
+        })
+    })
 </script>
 </body>
 </html>

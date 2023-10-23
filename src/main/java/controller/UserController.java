@@ -21,7 +21,6 @@ public class UserController extends BaseServlet {
         user.setPassword(request.getParameter("password"));
         String sql = "select * from users where userName=?";
         User userFromDB = userService.checkUser(sql, user);
-        request.setAttribute("user", userFromDB);
 
         PrintWriter printWriter = response.getWriter();
         printWriter.write(JSONObject.toJSONString(userFromDB));
