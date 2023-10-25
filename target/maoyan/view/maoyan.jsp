@@ -44,8 +44,14 @@
                 </div>
             </div>
             <div class="option">
-                <div class="login myFlex_x">登录</div>
-                <div class="register myFlex_x">注册</div>
+                <c:if test="${sessionScope.user == null}">
+                    <div class="login myFlex_x">登录</div>
+                    <div class="register myFlex_x">注册</div>
+                </c:if>
+                <c:if test="${sessionScope.user != null}">
+                    <div class="myFlex_x" style="width: 80%">欢迎:${sessionScope.user.userName}</div>
+                    <div class="myFlex_x" id="loginOut" style="color: red">注销</div>
+                </c:if>
             </div>
         </div>
     </div>
@@ -190,6 +196,23 @@
                     area: ['893px', '600px'],
                     content: 'view/register.html'
                 });
+            })
+            $("#loginOut").click(function (){
+                layer.confirm('确定要退出登录?', {icon: 3, title:'提示'}, function(index){
+                    //do something
+                    $.ajax({
+                        url: "<%=basePath%>user?method=loginOut",
+                        success: function (result){
+                            var res = JSON.parse(result);
+                            if(!res){
+                                layer.msg("注销失败");
+                            }
+                            layer.close(index);
+                            window.location.reload();
+                        }
+                    })
+                });
+
             })
         })
     </script>

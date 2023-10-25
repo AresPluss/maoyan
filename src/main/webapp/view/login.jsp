@@ -11,6 +11,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="<%=basePath%>js/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="<%=basePath%>layui/css/layui.css">
+    <script src="<%=basePath%>layui/layui.js"></script>
 </head>
 <style>
 </style>
@@ -29,9 +31,16 @@
             success:function (result){
                 var user = JSON.parse(result);
                 if(user == null){
-                    alert("登录失败");
+                    layer.msg("用户名或密码错误！")
                 }else{
-                    alert("Welcome!");
+                    layer.msg("登录成功！",{
+                        icon: 1,
+                        time: 2000
+                    }, function (){
+                        var index = parent.layer.getFrameIndex(window.name);
+                        parent.layer.close(index);
+                        parent.location.reload();
+                    })
                 }
             }
         })
