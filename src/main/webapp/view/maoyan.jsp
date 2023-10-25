@@ -193,8 +193,8 @@
                     shadeClose: true,
                     shade: 0.3,
                     maxmin: true, //开启最大化最小化按钮
-                    area: ['893px', '600px'],
-                    content: 'view/register.html'
+                    area: ['400px', '600px'],
+                    content: 'view/registry.jsp'
                 });
             })
             $("#loginOut").click(function (){

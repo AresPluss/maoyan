@@ -26,7 +26,7 @@
         <div class="login myFlex_y">
             <form action="#" method="get">
                 <label>用户名：</label>
-                <input type="text" onchange="doChange()" onfocus="doFocus()" onblur="doBlurForUsername(this)">
+                <input type="text" onchange="doChange()" onfocus="doFocus()" onblur="doBlurForUsername(this)" >
                 <span id="UsernameFormatInfo">请输入6-12位由数字或英文字母组成的用户名</span>
                 <br>
                 <label>密码：</label>
@@ -41,7 +41,7 @@
     <script>
         function doBlurForUsername(that) {
             console.log("离开");
-            var reg = /^[1-9a-zA-z]{6,12}$/;
+            var reg = /^[0-9a-zA-z]{6,12}$/;
             var text = document.getElementById("UsernameFormatInfo");
             testText(reg, text, that);
         }
