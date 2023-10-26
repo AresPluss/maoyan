@@ -153,6 +153,7 @@ public class jdbc2 {
             for (int i = 0; i < prams.length; i++) {
                 preparedStatement.setObject(i+1,prams[i]);
             }
+//            System.out.println(preparedStatement);
             // 获取到查询结果集
             resultSet = preparedStatement.executeQuery();
             // ResultSetMetaData:获取查询到的结果集对象中，关于表的列名（表字段名）信息

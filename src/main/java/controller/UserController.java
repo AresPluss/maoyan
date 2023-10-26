@@ -43,4 +43,18 @@ public class UserController extends BaseServlet {
         }
         printWriter.write(JSON.toJSONString(result));
     }
+    public void registry(HttpServletRequest request, HttpServletResponse response){
+        User user = new User();
+        user.setUserName(request.getParameter("userName"));
+        user.setPassword(request.getParameter("password"));
+        String sql = "INSERT INTO users (userName, password) VALUES (?, ?)";
+        boolean result = userService.addUser(sql,user);
+        PrintWriter printWriter = null;
+        try {
+            printWriter = response.getWriter();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        printWriter.write(JSON.toJSONString(result));
+    }
 }

@@ -63,36 +63,48 @@
         var originPassword = $("#password");
         var content = $("#password2CheckedPrompt");
         if(this.value !== originPassword.val()){
-            content.css("visibility", "visible");
             content.text("您两次输入的密码不一致");
             content.css("color","red");
         }else{
-            content.css("visibility", "hidden");
+            content.text("您两次输入的密码一致");
+            content.css("color","green");
         }
     })
+    $("#registry").click(function (){
+        var contentColor1 = $("#userNameCheckedPrompt").css("color");
+        var contentColor2 = $("#passwordCheckedPrompt").css("color");
+        var contentColor3 = $("#password2CheckedPrompt").css("color");
+        if(contentColor1 !== "rgb(0, 128, 0)"||
+            contentColor2 !== "rgb(0, 128, 0)"||
+            contentColor3 !== "rgb(0, 128, 0)"){
 
+            layer.msg("请根据提示重新输入信息！")
 
-    <%--$("#registry").click(function (){--%>
-    <%--    $.ajax({--%>
-    <%--        url: "<%=basePath%>user?method=registry",--%>
-    <%--        data: $("#registryForm").serialize(),--%>
-    <%--        success:function (result){--%>
-    <%--            var user = JSON.parse(result);--%>
-    <%--            if(user == null){--%>
-    <%--                layer.msg("用户名或密码错误！")--%>
-    <%--            }else{--%>
-    <%--                layer.msg("登录成功！",{--%>
-    <%--                    icon: 1,--%>
-    <%--                    time: 2000--%>
-    <%--                }, function (){--%>
-    <%--                    var index = parent.layer.getFrameIndex(window.name);--%>
-    <%--                    parent.layer.close(index);--%>
-    <%--                    parent.location.reload();--%>
-    <%--                })--%>
-    <%--            }--%>
-    <%--        }--%>
-    <%--    })--%>
-    <%--})--%>
+        }else{
+            console.log("hello");
+            $.ajax({
+                url: "<%=basePath%>user?method=registry",
+                data: $("#registryForm").serialize(),
+                success:function (result){
+                    var res = JSON.parse(result);
+                    console.log(res);
+                    if(res === false){
+                        layer.msg("您的用户名已经存在！")
+                    }else{
+                        layer.msg("注册成功！",{
+                            icon: 1,
+                            time: 2000
+                        }, function (){
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.layer.close(index);
+                            parent.location.reload();
+                        })
+                    }
+                }
+            })
+        }
+
+    })
 </script>
 </body>
 </html>

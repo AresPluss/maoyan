@@ -13,4 +13,7 @@ public class UserDao {
         }
         return null;
     }
+    public int addUser(String sql, User user){
+        return jdbc2.doInsert(jdbc2.connection,sql,user.getUserName(),user.getPassword());
+    }
 }

@@ -12,4 +12,15 @@ public class UserService {
                 return userFromDB;
         return null;
     }
+    public boolean addUser(String sql, User user){
+        String sqlCheck = "select * from users where userName=?";
+        User duplicateUser = userDao.getUserByUserName(sqlCheck, user.getUserName());
+        if(duplicateUser != null && duplicateUser.getUserName() != null)
+            return false;
+        int res = userDao.addUser(sql, user);
+        if(res > 0)
+            return true;
+        else
+            return false;
+    }
 }
