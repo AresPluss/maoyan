@@ -38,42 +38,56 @@
     </div>
 <script>
     $("#userName").blur(function (){
+        checkUserName();
+    })
+    function checkUserName(){
         var reg = /^[0-9a-zA-z]{6,12}$/;
         var content = $("#userNameCheckedPrompt");
-        if(reg.test(this.value)){
+        if(reg.test($("#userName").val())){
             content.text("您输入的用户名合法");
             content.css("color","green");
         }else{
             content.text("您输入的用户名不合法");
             content.css("color","red");
         }
-    })
+    }
     $("#password").blur(function (){
+        checkPassword();
+    })
+    function checkPassword(){
         var reg = /^(?=.*[0-9])(?=.*[a-zA-Z])[0-9a-zA-Z]{6,18}$/;
         var content = $("#passwordCheckedPrompt");
-        if(reg.test(this.value)){
+        if(reg.test($("#password").val())){
             content.text("您输入的密码合法");
             content.css("color","green");
         }else{
             content.text("您输入的密码不合法");
             content.css("color","red");
         }
-    })
+    }
     $("#password2").blur(function (){
+        checkPassword2();
+    })
+    function checkPassword2(){
         var originPassword = $("#password");
         var content = $("#password2CheckedPrompt");
-        if(this.value !== originPassword.val()){
+        if($("#password2").val() !== originPassword.val()){
             content.text("您两次输入的密码不一致");
             content.css("color","red");
         }else{
             content.text("您两次输入的密码一致");
             content.css("color","green");
         }
-    })
+    }
     $("#registry").click(function (){
+        checkUserName();
+        checkPassword();
+        checkPassword2();
+
         var contentColor1 = $("#userNameCheckedPrompt").css("color");
         var contentColor2 = $("#passwordCheckedPrompt").css("color");
         var contentColor3 = $("#password2CheckedPrompt").css("color");
+
         if(contentColor1 !== "rgb(0, 128, 0)"||
             contentColor2 !== "rgb(0, 128, 0)"||
             contentColor3 !== "rgb(0, 128, 0)"){
