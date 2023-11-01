@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     /*获取项目的根路径*/
     String path = request.getContextPath();
@@ -14,38 +15,7 @@
     <link rel="stylesheet" href="<%=basePath%>css/pageTitle.css">
 </head>
 <body>
-    <div class="title">
-        <div class="left">
-            <img src="<%=basePath%>img/maoyan_log.png" style="height: 55%">
-            <div class="city myFlex_x">武汉</div>
-            <div class="option">
-                <div class="secondary myFlex_x">首页</div>
-                <div class="secondary myFlex_x">电影</div>
-                <div class="secondary myFlex_x">影院</div>
-                <div class="secondary myFlex_x">演出</div>
-            </div>
-        </div>
-
-        <div class="right">
-            <div class="app_download myFlex_x" onmouseover="showInfo('app_download')" onmouseout="closeInfo('app_download')">
-                <img src="<%=basePath%>img/phone.png" style="margin-right: 10px; height: 40%">
-                <div style="font-size: 22px;">APP下载</div>
-                <div class="twoDimCode" id="app_download">
-                    <div class="Code myFlex_x" style="width: 100%; height: 60%">
-                        <img src="<%=basePath%>img/twoDimCode.png" style="height: 80%;margin-top: 20px">
-                    </div>
-                    <div class="info myFlex_y">
-                        <div style="font-size: 20px;margin-bottom: 5px">扫码下载APP</div>
-                        <div style="font-size: 15px;color: grey">选座更优惠</div>
-                    </div>
-                </div>
-            </div>
-            <div class="option">
-                <div class="myFlex_x">登录</div>
-                <div class="myFlex_x">注册</div>
-            </div>
-        </div>
-    </div>
+    <%@include file="pageTitle.jsp"%>
     <div class="banner">
         <div class="picture">
             <img class="movie_picture" src="<%=basePath%>img/${movie.movieImg}">
