@@ -1,12 +1,18 @@
 package entity;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Movie {
     private int id;
     private String movieName;
     private String movieImg;
     private BigDecimal price;
+
+    public BigDecimal discountPrice(double discount){
+        BigDecimal disc = new BigDecimal(discount);
+        return this.price.multiply(disc).setScale(2, RoundingMode.HALF_UP);
+    }
 
     public int getId() {
         return id;

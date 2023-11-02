@@ -11,6 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Detail</title>
+    <script src="<%=basePath%>js/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="<%=basePath%>css/details.css">
     <link rel="stylesheet" href="<%=basePath%>css/pageTitle.css">
 </head>
@@ -38,7 +39,7 @@
                     <div class="button myFlex_x"><span>&#9733</span>评分</div>
                 </div>
                 <div class="buy myFlex_x">
-                    <div class="button myFlex_x">特惠购票</div>
+                    <div data-id="${movie.id}" class="button myFlex_x" id="cinemaLink">特惠购票</div>
                 </div>
             </div>
         </div>
@@ -57,6 +58,10 @@
         </div>
     </div>
     <script>
+        $("#cinemaLink").click(function () {
+            var id = $("#cinemaLink").attr("data-id");
+            window.open("<%=basePath%>cinema?method=getCinemas&id="+id);
+        })
         function showInfo(id){
             document.getElementById(id).style.display = "block";
         }
