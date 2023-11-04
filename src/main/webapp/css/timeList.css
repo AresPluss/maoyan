@@ -1,0 +1,65 @@
+@import "public.css";
+
+.timeListPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeListPage>.title{
+    width: 60%;
+    height: 120px;
+    /*background-color: #bdcefc;*/
+    border-bottom: 1px solid gray;
+}
+.timeListPage>.title>.head{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.timeListPage>.title>.head>span{
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 30px;
+}
+.timeListPage>.title>.content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.timeListPage>.title>.content>span{
+    margin-top: 15px;
+    font-size: 15px;
+    margin-right: 35px;
+}
+.timeListPage>.title>.content>.title{
+    margin-right: 0;
+}
+.timeListPage>.dayOption{
+    width: 60%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.timeListPage>.list_title{
+    width: 60%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+.timeListPage>.list_title>div{
+    width: 25%;
+    font-weight: bold;
+ }
+.timeListPage>.each_time{
+    width: 60%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 225, 255, 0.25);
+}
+.timeListPage>.each_time>div{
+    width: 25%;
+}
