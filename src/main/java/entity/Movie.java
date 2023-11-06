@@ -2,12 +2,49 @@ package entity;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.sql.Timestamp;
 
 public class Movie {
     private int id;
     private String movieName;
     private String movieImg;
     private BigDecimal price;
+    private int lonTime;
+    private String foreignName;
+    private String leadingRoles;
+    private Timestamp releaseTime;
+
+    public int getLonTime() {
+        return lonTime;
+    }
+
+    public void setLonTime(int lonTime) {
+        this.lonTime = lonTime;
+    }
+
+    public String getForeignName() {
+        return foreignName;
+    }
+
+    public void setForeignName(String foreignName) {
+        this.foreignName = foreignName;
+    }
+
+    public String getLeadingRoles() {
+        return leadingRoles;
+    }
+
+    public void setLeadingRoles(String leadingRoles) {
+        this.leadingRoles = leadingRoles;
+    }
+
+    public Timestamp getReleaseTime() {
+        return releaseTime;
+    }
+
+    public void setReleaseTime(Timestamp releaseTime) {
+        this.releaseTime = releaseTime;
+    }
 
     public BigDecimal discountPrice(double discount){
         BigDecimal disc = new BigDecimal(discount);

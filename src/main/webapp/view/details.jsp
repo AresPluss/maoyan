@@ -25,12 +25,16 @@
             <div class="info_top">
                 <div class="info_title">
                     <div style="font-size: 40px; font-weight: bold">${movie.movieName}</div>
-                    <div style="font-size: 25px">Dust To Dust</div>
+                    <div style="font-size: 25px">${movie.foreignName}</div>
                 </div>
                 <div class="info_info">
-                    <div>剧情 犯罪</div>
-                    <div>中国大陆 / 111分钟</div>
-                    <div>2023-09-09 09:00中国大陆上映</div>
+                    <div>
+                        <c:forEach items="${movie.leadingRoles.split(',')}" var="role">
+                            ${role}
+                        </c:forEach>
+                    </div>
+                    <div>中国大陆 / ${movie.lonTime}分钟</div>
+                    <div>${movie.releaseTime}中国大陆上映</div>
                 </div>
             </div>
             <div class="info_button">
