@@ -63,3 +63,20 @@
 .timeListPage>.each_time>div{
     width: 25%;
 }
+
+.timeListPage>table{
+    width: 60%;
+    text-align: center;
+}
+.timeListPage>table tr:nth-child(2n+1){
+    background-color: rgba(128, 128, 128, 0.1);
+}
+.timeListPage>table th{
+    height: 50px;
+    width: 20%;
+    font-size: 18px;
+}
+.timeListPage>table td{
+    height: 90px;
+    font-size: 15px;
+}
