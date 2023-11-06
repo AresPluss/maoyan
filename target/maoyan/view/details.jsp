@@ -29,8 +29,8 @@
                 </div>
                 <div class="info_info">
                     <div>
-                        <c:forEach items="${movie.leadingRoles.split(',')}" var="role">
-                            ${role}
+                        <c:forEach items="${movie.type.split(',')}" var="tag">
+                            ${tag}
                         </c:forEach>
                     </div>
                     <div>中国大陆 / ${movie.lonTime}分钟</div>

@@ -11,6 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="<%=basePath%>js/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="<%=basePath%>css/cinema.css">
 </head>
 <body>
@@ -36,10 +37,18 @@
                     <span>元</span>
                 </div>
                 <div class="buy myFlex_x">
-                    <button>特惠购票</button>
+                    <button data-cinema-id="${cinema.id}" data-movie-id="${requestScope.movie.id}" id="buy">特惠购票</button>
                 </div>
             </div>
         </c:forEach>
     </div>
+    <script>
+        $("#buy").click(function (){
+            var tag = $("#buy");
+            var cinema_id = tag.attr("data-cinema-id");
+            var movie_id = tag.attr("data-movie-id");
+            window.open("<%=basePath%>showing?method=getShowingByMovieId&cinema_id="+cinema_id+"&movie_id="+movie_id);
+        })
+    </script>
 </body>
 </html>

@@ -13,6 +13,15 @@ public class Movie {
     private String foreignName;
     private String leadingRoles;
     private Timestamp releaseTime;
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public int getLonTime() {
         return lonTime;
