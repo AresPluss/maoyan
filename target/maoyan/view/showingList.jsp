@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="<%=basePath%>css/timeList.css">
+    <link rel="stylesheet" href="<%=basePath%>css/showingList.css">
     <link rel="stylesheet" href="<%=basePath%>layui/css/layui.css">
     <script src="<%=basePath%>layui/layui.js"></script>
 </head>
@@ -57,10 +57,10 @@
             <c:forEach items="${requestScope.showingList}" var="tag">
                 <tr>
                     <td><span style="font-size: 20px;font-weight: bold">${String.format("%02d",tag.startTime.toLocalDateTime().getHour())}:${String.format("%02d",tag.startTime.toLocalDateTime().getMinute())}</span><br>
-                        <span style="font-size: 10px">${String.format("%02d",tag.endTime.toLocalDateTime().getHour())}:${String.format("%02d",tag.endTime.toLocalDateTime().getMinute())}散场</span></td>
+                        <span style="font-size: 10px">${String.format("%02d",tag.startTime.toLocalDateTime().plusMinutes(requestScope.movie.lonTime).getHour())}:${String.format("%02d",tag.startTime.toLocalDateTime().plusMinutes(requestScope.movie.lonTime).getMinute())}散场</span></td>
                     <td>国语2D</td>
-                    <td>${tag.roomId}号厅</td>
-                    <td style="font-size: 18px;color: red;font-weight: bold">￥38</td>
+                    <td>${tag.roomName}</td>
+                    <td style="font-size: 18px;color: red;font-weight: bold">￥${String.format("%.0f", requestScope.movie.price * tag.discount * requestScope.cinema.discount)}</td>
                     <td><button style="padding: 3px">选座购票</button></td>
                 </tr>
             </c:forEach>

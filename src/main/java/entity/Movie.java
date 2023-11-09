@@ -55,11 +55,6 @@ public class Movie {
         this.releaseTime = releaseTime;
     }
 
-    public BigDecimal discountPrice(double discount){
-        BigDecimal disc = new BigDecimal(discount);
-        return this.price.multiply(disc).setScale(2, RoundingMode.HALF_UP);
-    }
-
     public int getId() {
         return id;
     }
@@ -90,5 +85,10 @@ public class Movie {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public BigDecimal discountPrice(double discount){
+        BigDecimal disc = new BigDecimal(discount);
+        return this.price.multiply(disc).setScale(2, RoundingMode.HALF_UP);
     }
 }

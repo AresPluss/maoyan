@@ -37,17 +37,18 @@
                     <span>元</span>
                 </div>
                 <div class="buy myFlex_x">
-                    <button data-cinema-id="${cinema.id}" data-movie-id="${requestScope.movie.id}" id="buy">特惠购票</button>
+                    <button data-cinema-id="${cinema.id}" data-movie-id="${requestScope.movie.id}" class="buyButton">特惠购票</button>
                 </div>
             </div>
         </c:forEach>
     </div>
     <script>
-        $("#buy").click(function (){
-            var tag = $("#buy");
+        $(".buyButton").click(function (){
+            var tag = $(this);
             var cinema_id = tag.attr("data-cinema-id");
             var movie_id = tag.attr("data-movie-id");
-            window.open("<%=basePath%>showing?method=getShowingByMovieId&cinema_id="+cinema_id+"&movie_id="+movie_id);
+            console.log(cinema_id);
+            window.open("<%=basePath%>showing?method=getShowingList&cinema_id="+cinema_id+"&movie_id="+movie_id);
         })
     </script>
 </body>

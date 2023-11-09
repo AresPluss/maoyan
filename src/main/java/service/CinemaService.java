@@ -11,4 +11,7 @@ public class CinemaService {
     public List<Cinema> getCinemas(String sql){
         return cinemaDao.getCinemas(sql);
     }
+    public Cinema getCinemaById(String sql, String id){
+        return cinemaDao.getCinemaById(sql, id);
+    }
 }
