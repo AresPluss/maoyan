@@ -1,9 +1,12 @@
 package entity;
 
+import java.util.List;
+
 public class Room {
     private int id;
     private String roomName;
     private int cinemaId;
+    private List PalyingTime;
 
     public int getId() {
         return id;
