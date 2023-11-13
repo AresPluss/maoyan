@@ -1,6 +1,7 @@
 package dao;
 
 import entity.Room;
+import entity.ShowTime;
 
 import java.util.List;
 import java.util.Map;
@@ -12,5 +13,9 @@ public class RoomDao {
 
     public List<Room> getRoomsId(String sql, String cinema_id){
         return jdbc2.selectList(Room.class, sql, cinema_id);
+    }
+
+    public List<ShowTime> getShowingListById(String sql, int roomId, String movieId) {
+        return jdbc2.selectList(ShowTime.class, sql, roomId, movieId);
     }
 }

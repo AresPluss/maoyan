@@ -6,7 +6,15 @@ public class Room {
     private int id;
     private String roomName;
     private int cinemaId;
-    private List PalyingTime;
+    private List<ShowTime> playingList;
+
+    public List<ShowTime> getPlayingList() {
+        return playingList;
+    }
+
+    public void setPlayingList(List<ShowTime> playingList) {
+        this.playingList = playingList;
+    }
 
     public int getId() {
         return id;
