@@ -2,13 +2,17 @@ package service;
 
 import dao.RoomDao;
 import entity.Room;
-import entity.ShowTime;
+import entity.Showtime;
 
 import java.sql.Timestamp;
 import java.util.*;
 
 public class RoomService {
     RoomDao roomDao = new RoomDao();
+    public Room getRoomById(String sql, String id){
+        return roomDao.getRoomById(sql, id);
+    }
+
     public List<Map<String, Object>> getShowingList(String sql, String cinema_id, String movie_id){
         String sqlForRoomId = "select * from room where cinemaId=?";
         List<Room> roomList = roomDao.getRoomsId(sqlForRoomId, cinema_id);
@@ -41,12 +45,12 @@ public class RoomService {
         Iterator<Room> iterator = roomList.listIterator();
         while(iterator.hasNext()){
             Room room = iterator.next();
-            List<ShowTime> showTimeList = roomDao.getShowingListById(sql, room.getId(), movie_id);
-            if(showTimeList.size() == 0){
+            List<Showtime> showtimeList = roomDao.getShowingListById(sql, room.getId(), movie_id);
+            if(showtimeList.size() == 0){
                 iterator.remove();
             } else {
-                showTimeList.sort(Comparator.comparing(ShowTime::getStartTime));
-                room.setPlayingList(showTimeList);
+                showtimeList.sort(Comparator.comparing(Showtime::getStartTime));
+                room.setPlayingList(showtimeList);
             }
         }
         return roomList;

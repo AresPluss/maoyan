@@ -2,12 +2,21 @@ package entity;
 
 import java.sql.Timestamp;
 
-public class ShowTime {
+public class Showtime {
     private int id;
     private int roomId;
     private int movieId;
     private Timestamp startTime;
     private double discount;
+    private String redSeat;
+
+    public String getRedSeat() {
+        return redSeat;
+    }
+
+    public void setRedSeat(String redSeat) {
+        this.redSeat = redSeat;
+    }
 
     public int getId() {
         return id;

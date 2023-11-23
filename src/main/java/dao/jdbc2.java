@@ -169,7 +169,7 @@ public class jdbc2 {
                     resultMap.put(k,v);
                 }
             }
-            System.out.println("获取到的列数是"+count);
+//            System.out.println("获取到的列数是"+count);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

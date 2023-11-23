@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<%=basePath%>css/showingList.css">
     <link rel="stylesheet" href="<%=basePath%>layui/css/layui.css">
     <script src="<%=basePath%>layui/layui.js"></script>
+    <script src="<%=basePath%>js/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <%@include file="pageTitle.jsp"%>
@@ -61,10 +62,16 @@
                     <td>国语2D</td>
                     <td>${tag.roomName}</td>
                     <td style="font-size: 18px;color: red;font-weight: bold">￥${String.format("%.0f", requestScope.movie.price * tag.discount * requestScope.cinema.discount)}</td>
-                    <td><button style="padding: 3px">选座购票</button></td>
+                    <td><button class="buy" data-id="${tag.id}" style="padding: 3px">选座购票</button></td>
                 </tr>
             </c:forEach>
         </table>
     </div>
+    <script>
+        $(".buy").click(function () {
+            var showtimeId = $(this).attr("data-id");
+            window.open("<%=basePath%>selectSeat?method=getRoomDetails&showtime_id=" + showtimeId);
+        })
+    </script>
 </body>
 </html>

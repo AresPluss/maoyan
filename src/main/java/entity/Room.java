@@ -6,13 +6,40 @@ public class Room {
     private int id;
     private String roomName;
     private int cinemaId;
-    private List<ShowTime> playingList;
+    private int row;
+    private int col;
+    private String blankSeat;
+    private List<Showtime> playingList;
 
-    public List<ShowTime> getPlayingList() {
+    public String getBlankSeat() {
+        return blankSeat;
+    }
+
+    public void setBlankSeat(String blankSeat) {
+        this.blankSeat = blankSeat;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public void setCol(int col) {
+        this.col = col;
+    }
+
+    public List<Showtime> getPlayingList() {
         return playingList;
     }
 
-    public void setPlayingList(List<ShowTime> playingList) {
+    public void setPlayingList(List<Showtime> playingList) {
         this.playingList = playingList;
     }
 

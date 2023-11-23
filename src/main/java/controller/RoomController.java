@@ -23,8 +23,8 @@ public class RoomController extends BaseServlet {
     MovieService movieService = new MovieService();
     CinemaService cinemaService = new CinemaService();
     public void getShowingList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String sql = "select r.roomName,s.startTime,s.discount\n" +
-                "\tFROM room r,showtime s\n" +
+        String sql = "select r.roomName,s.startTime,s.discount,s.id\n" +
+                "\tfrom room r,showtime s\n" +
                 "\twhere r.id=s.roomId\n" +
                 "\t\tand r.id=?\n" +
                 "\t\tand s.movieId=?;";

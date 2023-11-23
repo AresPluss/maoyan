@@ -48,7 +48,7 @@
             var cinema_id = tag.attr("data-cinema-id");
             var movie_id = tag.attr("data-movie-id");
             console.log(cinema_id);
-            window.open("<%=basePath%>showing3?method=getShowingList&cinema_id="+cinema_id+"&movie_id="+movie_id);
+            window.open("<%=basePath%>showing?method=getShowingList&cinema_id="+cinema_id+"&movie_id="+movie_id);
         })
     </script>
 </body>
