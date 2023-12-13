@@ -64,7 +64,7 @@
     <script>
         $("#cinemaLink").click(function () {
             var id = $("#cinemaLink").attr("data-id");
-            window.open("<%=basePath%>cinema?method=getCinemas&id="+id);
+            window.open("<%=basePath%>cinema?method=getCinemas&id="+id+"&curr=1");
         })
         function showInfo(id){
             document.getElementById(id).style.display = "block";

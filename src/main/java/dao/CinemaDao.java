@@ -6,8 +6,8 @@ import entity.Movie;
 import java.util.List;
 
 public class CinemaDao {
-    public List<Cinema> getCinemas(String sql){
-        return jdbc2.selectList(Cinema.class, sql);
+    public List<Cinema> getCinemas(String sql, String curr, String limit){
+        return jdbc2.selectList(Cinema.class, sql, Integer.parseInt(curr), Integer.parseInt(limit));
     }
     public Cinema getCinemaById(String sql, String id){
         try {
@@ -18,5 +18,9 @@ public class CinemaDao {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public String getCinemaTotal(String sql){
+        return String.valueOf(jdbc2.selectList(sql).get(0).values().toArray()[0]);
     }
 }
