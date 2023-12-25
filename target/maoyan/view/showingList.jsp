@@ -57,8 +57,8 @@
             </tr>
             <c:forEach items="${requestScope.showingList}" var="tag">
                 <tr>
-                    <td><span style="font-size: 20px;font-weight: bold">${String.format("%02d",tag.startTime.toLocalDateTime().getHour())}:${String.format("%02d",tag.startTime.toLocalDateTime().getMinute())}</span><br>
-                        <span style="font-size: 10px">${String.format("%02d",tag.startTime.toLocalDateTime().plusMinutes(requestScope.movie.lonTime).getHour())}:${String.format("%02d",tag.startTime.toLocalDateTime().plusMinutes(requestScope.movie.lonTime).getMinute())}散场</span></td>
+                    <td><span style="font-size: 20px;font-weight: bold">${String.format("%02d",tag.startTime.getHour())}:${String.format("%02d",tag.startTime.getMinute())}</span><br>
+                        <span style="font-size: 10px">${String.format("%02d",tag.startTime.plusMinutes(requestScope.movie.lonTime).getHour())}:${String.format("%02d",tag.startTime.plusMinutes(requestScope.movie.lonTime).getMinute())}散场</span></td>
                     <td>国语2D</td>
                     <td>${tag.roomName}</td>
                     <td style="font-size: 18px;color: red;font-weight: bold">￥${String.format("%.0f", requestScope.movie.price * tag.discount * requestScope.cinema.discount)}</td>

@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/selectSeat")
@@ -31,6 +32,9 @@ public class SelectSeatController extends BaseServlet{
         request.setAttribute("room", room);
 
         int[][] seatGraph = showtimeService.getSeatGraph(room, showtime);
+        for(int[] row : seatGraph){
+            System.out.println(Arrays.toString(row));
+        }
 
         request.setAttribute("graph", seatGraph);
         request.setAttribute("showtimeId", showtimeId);

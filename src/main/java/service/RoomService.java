@@ -5,6 +5,7 @@ import entity.Room;
 import entity.Showtime;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class RoomService {
@@ -22,7 +23,7 @@ public class RoomService {
                     (roomDao.getShowingList(sql, room.getId() + "", movie_id));
             list.addAll(tempList);
         }
-        list.sort(Comparator.comparing(e -> (Timestamp)e.get("startTime")));
+        list.sort(Comparator.comparing(e -> (LocalDateTime)e.get("startTime")));
         return list;
     }
     public List<List<Map<String, Object>>> getShowingList2(String sql, String cinema_id, String movie_id){
@@ -33,7 +34,7 @@ public class RoomService {
             List<Map<String, Object>> tempList = new ArrayList<>
                     (roomDao.getShowingList(sql, room.getId() + "", movie_id));
             if(tempList.size() > 0){
-                tempList.sort(Comparator.comparing(e -> (Timestamp)e.get("startTime")));
+                tempList.sort(Comparator.comparing(e -> (LocalDateTime)e.get("startTime")));
                 list.add(tempList);
             }
         }

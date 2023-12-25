@@ -3,6 +3,7 @@ package entity;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class Movie {
     private int id;
@@ -12,7 +13,7 @@ public class Movie {
     private int lonTime;
     private String foreignName;
     private String leadingRoles;
-    private Timestamp releaseTime;
+    private LocalDateTime releaseTime;
     private String type;
 
     public String getType() {
@@ -47,11 +48,11 @@ public class Movie {
         this.leadingRoles = leadingRoles;
     }
 
-    public Timestamp getReleaseTime() {
+    public LocalDateTime getReleaseTime() {
         return releaseTime;
     }
 
-    public void setReleaseTime(Timestamp releaseTime) {
+    public void setReleaseTime(LocalDateTime releaseTime) {
         this.releaseTime = releaseTime;
     }
 

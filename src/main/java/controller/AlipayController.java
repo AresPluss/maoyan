@@ -36,7 +36,6 @@ public class AlipayController extends BaseServlet{
         double totalPrice = Double.parseDouble(request.getParameter("totalPrice"));
         String subject = request.getParameter("subject");
         String form = AlipayApplication.pay(id, totalPrice, subject);
-        System.out.println(form);
         request.setAttribute("form",form);
         request.getRequestDispatcher("view/payPage.jsp").forward(request,response);
     }
@@ -66,10 +65,10 @@ public class AlipayController extends BaseServlet{
         request.getRequestDispatcher("view/selectSeat.jsp").forward(request,response);
     }
 
-//    @Override
-//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        System.out.println("异步通知");
-//        SelectSeatController selectSeatController = new SelectSeatController();
-//        selectSeatController.submitSelect(seats, showtimeId);
-//    }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("异步通知");
+        SelectSeatController selectSeatController = new SelectSeatController();
+        selectSeatController.submitSelect(seats, showtimeId);
+    }
 }

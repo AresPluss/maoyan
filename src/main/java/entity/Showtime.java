@@ -1,12 +1,13 @@
 package entity;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class Showtime {
     private int id;
     private int roomId;
     private int movieId;
-    private Timestamp startTime;
+    private LocalDateTime startTime;
     private double discount;
     private String redSeat;
 
@@ -42,11 +43,11 @@ public class Showtime {
         this.movieId = movieId;
     }
 
-    public Timestamp getStartTime() {
+    public LocalDateTime getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Timestamp startTime) {
+    public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
     }
 
