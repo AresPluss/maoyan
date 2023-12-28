@@ -8,6 +8,9 @@ import com.alipay.api.request.AlipayTradePagePayRequest;
 import com.alipay.api.response.AlipayTradePagePayResponse;
 
 public class AlipayApplication {
+        // 账户：ginems2888@sandbox.com
+        // 密码：111111
+
         // 应用ID,您的APPID，收款账号既是您的APPID对应支付宝账号
         public static String app_id = "9021000132645846";
         // 商户私钥，您的PKCS8格式RSA2私钥
@@ -15,9 +18,9 @@ public class AlipayApplication {
         // 支付宝公钥,查看地址：https://openhome.alipay.com/platform/keyManage.htm 对应APPID下的支付宝公钥。
         public static String alipay_public_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwD8KKKSOsCPsaxVFKjNsPuqC0HBmYvih8DhJQY/599hGE7v5Cdxntxnk1c+fhpr3Q4VQs+JctqU3/VoP6F2rail2XXVr2HP9fk1Ijm77G1mVJKo5UzEBftx418qh7kCoNznHOkvzeVY5sQHWuvx3/g1JntGoCaxT5Dabjv+W5gP6xq9W/lqMKB1pqJaQ+0IufX0jQLbfCFLCjBiBwzb1Cso1SACt/1JRIptGFjOTZwvTM/rTWvJjLLN9ucXmkD/YvoRcqU/ZofXjPCf9G+bNQVPt3SV6TVN0OnE5wdywBh1tudj6GpDto2z1QVY2kmfywmBi8QxzOdzSb2TG6j4DnwIDAQAB";
         // 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-        public static String notify_url = "http://5f7mzi.natappfree.cc/maoyan_war_exploded/payPage";
+        public static String notify_url = "http://2h4asj.natappfree.cc/maoyan_war_exploded/asynchronous";
         // 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-        public static String return_url = "http://localhost:8080/maoyan_war_exploded/payPage?method=returnSelectSeatsPage";
+        public static String return_url = "http://localhost:8080/maoyan_war_exploded/pay?method=returnSelectSeatsPage";
         // 签名方式
         public static String sign_type = "RSA2";
         // 字符编码格式
@@ -38,14 +41,14 @@ public class AlipayApplication {
         bizContent.put("subject", subject);
         bizContent.put("product_code", "FAST_INSTANT_TRADE_PAY");
         request.setBizContent(bizContent.toString());
-        System.out.println("bizContent: "+ bizContent.toString());
+//        System.out.println("bizContent: "+ bizContent.toString());
         AlipayTradePagePayResponse response = alipayClient.pageExecute(request);
         String form ="";
         if(response.isSuccess()){
-            System.out.println("调用成功");
+//            System.out.println("调用成功");
             form = response.getBody();
         } else {
-            System.out.println("调用失败");
+//            System.out.println("调用失败");
         }
         return form;
     }

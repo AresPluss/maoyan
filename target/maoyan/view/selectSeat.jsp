@@ -171,7 +171,7 @@
                 var totalPrice = $("#totalPrice").text();
                 var subject = $(".confirm").attr("data-movieName");
                 window.location.href =
-                    "<%=basePath%>payPage?method=doPay" +
+                    "<%=basePath%>pay?method=doPay" +
                     "&showtimeId=" + showtimeId +
                     "&movieId=" + movieId +
                     "&totalPrice=" + totalPrice +
@@ -181,7 +181,7 @@
 
 
                 <%--$.ajax({--%>
-                <%--    url: "<%=basePath%>payPage?method=doPayTx",--%>
+                <%--    url: "<%=basePath%>pay?method=doPayTx",--%>
                 <%--    data: {--%>
                 <%--        showtimeId: showtimeId,--%>
                 <%--        seats: JSON.stringify(seats),--%>
@@ -195,7 +195,7 @@
                 <%--        console.log(result);--%>
                 <%--        if(result === true){--%>
                 <%--            alert("是否确认去支付？");--%>
-                <%--            window.open("<%=basePath%>payPage?method=doPay" +--%>
+                <%--            window.open("<%=basePath%>pay?method=do" +--%>
                 <%--                "&movieId=" + movieId +--%>
                 <%--                "&totalPrice=" + totalPrice +--%>
                 <%--                "&subject=" + subject);--%>

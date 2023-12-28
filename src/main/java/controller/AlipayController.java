@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/payPage")
+@WebServlet(urlPatterns = "/pay")
 public class AlipayController extends BaseServlet{
     public static List<Integer> seats;
     public static String showtimeId;
@@ -63,12 +63,5 @@ public class AlipayController extends BaseServlet{
         request.setAttribute("cinema",cinema);
 
         request.getRequestDispatcher("view/selectSeat.jsp").forward(request,response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("异步通知");
-        SelectSeatController selectSeatController = new SelectSeatController();
-        selectSeatController.submitSelect(seats, showtimeId);
     }
 }

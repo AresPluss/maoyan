@@ -32,9 +32,9 @@ public class SelectSeatController extends BaseServlet{
         request.setAttribute("room", room);
 
         int[][] seatGraph = showtimeService.getSeatGraph(room, showtime);
-        for(int[] row : seatGraph){
-            System.out.println(Arrays.toString(row));
-        }
+//        for(int[] row : seatGraph){
+//            System.out.println(Arrays.toString(row));
+//        }
 
         request.setAttribute("graph", seatGraph);
         request.setAttribute("showtimeId", showtimeId);
@@ -53,9 +53,9 @@ public class SelectSeatController extends BaseServlet{
     public void submitSelect(List<Integer> seats, String showtimeId) throws IOException {
         String sql = "update showtime set redSeat=? where id=?";
         boolean updateResult = showtimeService.addSeats(sql, seats, showtimeId);
-        if(updateResult)
-            System.out.println("座位添加成功！");
-        else
-            System.out.println("座位添加失败！");
+//        if(updateResult)
+//            System.out.println("座位添加成功！");
+//        else
+//            System.out.println("座位添加失败！");
     }
 }

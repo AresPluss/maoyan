@@ -7,7 +7,9 @@ import java.util.List;
 
 public class CinemaDao {
     public List<Cinema> getCinemas(String sql, String curr, String limit){
-        return jdbc2.selectList(Cinema.class, sql, Integer.parseInt(curr)-1, Integer.parseInt(limit));
+        int _curr = Integer.parseInt(curr);
+        int _limit = Integer.parseInt(limit);
+        return jdbc2.selectList(Cinema.class, sql, (_curr - 1) * _limit, _limit);
     }
     public Cinema getCinemaById(String sql, String id){
         try {

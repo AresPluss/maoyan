@@ -14,7 +14,7 @@ import java.util.List;
 
 @WebServlet(urlPatterns = "/cinema")
 public class CinemaController extends BaseServlet {
-    public static final int PAGE_LIMIT = 2;
+    public static final int PAGE_LIMIT = 3;
     CinemaService cinemaService = new CinemaService();
     MovieService movieService = new MovieService();
     public void getCinemas(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
